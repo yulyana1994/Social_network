@@ -1,0 +1,14 @@
+.content{
+    grid-area: c;
+    background-color: brown;
+  }
+  
+  .sea{
+    width: 500px;
+  }
+
+  .item {
+    color: greenyellow;
+  }
+
+  
