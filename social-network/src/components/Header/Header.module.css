@@ -1,9 +1,11 @@
 .header{
     grid-area: h;
-   background-color: palegoldenrod;
+    background-image: url(./../assets/1626735108_7-kartinkin-com-p-nyudovie-foni-krasivo-7.jpg);
   }
   
   .header img{
-    width: 100px;
+    width: 50px;
   }
+
+
   
