@@ -1,44 +1,39 @@
 import React from "react";
 import s from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-
-const DialogItem = (props) =>{
-    return(
-        <div className={s.dialog + " " + s.active}>
-            <NavLink to={"/Dialogs/" + props.id}>
-                {props.name}
-            </NavLink>
-        </div>
-    )
-};
-
-const Message = (props) => {
-    return(
-        <div className={s.message}>{props.message}</div>
-    )
-}
 
 const Dialogs = (props) => {
+
+let dialogs = [
+    {id:1, name: "Artur"},
+    {id:2, name: "Sofia"},
+    {id:3, name: "Ilya"},
+    {id:4, name: "Tanya"},
+    {id:5, name: "Vera"},
+    {id:6, name: "Ivan"}
+];
+
+let messages = [
+    {id:1, message: "Привет! Погнали на шаву"},
+    {id:2, message: "Купи вкуснях"},
+    {id:3, message: "Я тебя люблю"},
+    {id:4, message: "Новые фото Арины"},
+    {id:5, message: "Пост с инсты"},
+    {id:6, message: "С праздником!!"},
+]
+
+let dialogsElements = dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
+let messagesElement = messages.map((m) => <Message message = {m.message}/>)
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name={"Artur"} id="1"/>
-                <DialogItem name={"Sofia"} id="2"/>
-                <DialogItem name={"Ilya"} id="3"/>
-                <DialogItem name={"Vera"} id="4"/>
-                <DialogItem name={"Yulyana"} id="5"/>
-                <DialogItem name={"Ivan"} id="6"/>
-                <DialogItem name={"Tanya"} id="7"/>
+                { dialogsElements }
             </div>
             <div className={s.messages}>
-                <Message message = "Привет! Погнали на шаву"/>
-                <Message message = "Купи вкуснях"/>
-                <Message message = "Я тебя люблю"/>
-                <Message message = "Новый пост"/>
-                <Message message = "Выигрышная комбинация 6 из 49"/>
-                <Message message = "С праздником!!"/>
-                <Message message = "Новый видосик с Ари"/>
+                { messagesElement }
             </div>
         </div> 
     )
