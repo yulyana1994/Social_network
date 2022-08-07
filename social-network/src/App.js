@@ -5,9 +5,11 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Friends from "./components/Friends/Friends";
 
 
-function App() {
+function App({ state }) {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -15,10 +17,13 @@ function App() {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path='profile/' element={<Profile />}/>
-            <Route path='dialogs/*' element={<Dialogs />}/>
+            <Route path='profile/' element={<Profile 
+              state = {state.profilePage} />}/>
+            <Route path='dialogs/*' element={<Dialogs 
+              state={state.messagesPage} />}/>
           </Routes>  
         </div>
+          <Friends state={state.sideBar} />
       </div>
     </BrowserRouter>
   );

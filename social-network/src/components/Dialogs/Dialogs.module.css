@@ -1,24 +1,26 @@
 .dialogs{
-display: grid;
-grid-template-columns: 2fr 10fr;
-}
+    display: grid;
+    grid-template-columns: 2fr 10fr;
 
-.dialog{
-
-}
-
-.dialogsItems{
-    padding: 10px;
-}
-
-.dialogsItems .active{
-    color: rgb(130, 15, 34);
-}
-
-.messages{
-    padding: 10px;
-}
-
-.message{
-
-}
+    
+   
+    }
+    
+    .dialog{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+    
+    .dialogsItems{
+        
+    }
+    
+    .dialogsItems .active{
+        color: rgb(130, 15, 34);
+    }
+    
+    .messages{
+        
+    }

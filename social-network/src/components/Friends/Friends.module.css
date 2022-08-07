@@ -1,0 +1,11 @@
+ .friendsItem{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: flex-start;
+}
+
+.friendsElements{
+    display: flex;
+    
+}
