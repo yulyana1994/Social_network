@@ -5,25 +5,23 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Friends from "./components/Friends/Friends";
 
 
-function App({ state }) {
+function App(props) {
 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar state={props.state}/>
         <div className="app-wrapper-content">
           <Routes>
             <Route path='profile/' element={<Profile 
-              state = {state.profilePage} />}/>
+              profilePage = {props.state.profilePage} addPost = {props.addPost} updateNewPostText = {props.updateNewPostText} />}/>
             <Route path='dialogs/*' element={<Dialogs 
-              state={state.messagesPage} />}/>
+              state={props.state.messagesPage} />}/>
           </Routes>  
         </div>
-          <Friends state={state.sideBar} />
       </div>
     </BrowserRouter>
   );

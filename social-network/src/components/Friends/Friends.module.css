@@ -1,11 +1,15 @@
  .friendsItem{
-    display: flex;
     align-items: center;
     padding: 5px;
-    justify-content: flex-start;
+    
 }
 
 .friendsElements{
     display: flex;
-    
+}
+
+.friendsTitle{
+    color: rgb(16, 91, 91);
+    font-size: 24px;
+    text-align: center;
 }

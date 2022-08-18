@@ -1,5 +1,7 @@
 import s from "./../components/Dialogs/Avatar/Avatar.module.css";
-
+let rerender = () =>{
+    console.log("hello")
+}
 
 let state = {
     profilePage: {
@@ -10,7 +12,8 @@ let state = {
             {id:4, message: "Я стараюсь выучить React", likesCount: 54},
             {id:5, message: "Я стараюсь выучить JS", likesCount: 4},
             {id:6, message: "Приветик", likesCount: 5}
-            ]
+            ],
+        newPostText: "hello"
     },
 
     messagesPage: {
@@ -39,6 +42,26 @@ let state = {
             {id:3, name: "Stas", avatar: <img className={s.avatar} src = {require("./../components/assets/stas.jpg")} alt="profilephoto" />}
         ]
     }
+}
+
+export const addPost = () => {
+    let newPost = {
+        id:5,
+        message: state.profilePage.newPostText,
+        likesCount: 0
+    }
+   state.profilePage.posts.push(newPost); 
+   state.profilePage.newPostText = "";
+   rerender(state);
+};
+
+export const updateNewPostText = (newText) => {
+   state.profilePage.newPostText = newText; 
+   rerender(state);
+}
+
+export const subscribe = (observer) =>{
+    rerender = observer;
 }
 
 export default state;
